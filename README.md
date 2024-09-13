@@ -128,11 +128,4 @@ The repository is organized into several key components to handle the web scrapi
 ### Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have suggestions for improvement.
-
-### License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
 ---
-
-This repository serves as a powerful tool for web scraping property data from the Bayut website, offering flexible data management and storage capabilities. Whether you're looking to scrape property listings or analyze transaction data, this solution is robust and easy to use.
