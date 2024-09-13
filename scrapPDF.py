@@ -3,10 +3,10 @@ import os
 import glob
 import time
 import logging
-import pandas as pd
+import pandas as pd  # type: ignore
 from datetime import datetime
 from utils.dateValidations import is_valid_date
-import PyPDF2
+import PyPDF2  # type: ignore
 
 from utils.webDriver import webDriver
 
@@ -24,14 +24,14 @@ def pdfProcessing(driver, permit): #0
                 count_Buy = pdf_df['Purpose'].value_counts()['Sell']
             else:
                 count_Rent = 0
-        except:
+        except:  # noqa: E722
             count_Buy = 0
         try:
             if pdf_df['Purpose'].value_counts()['Rent'] > 0:
                 count_Rent = pdf_df['Purpose'].value_counts()['Rent']
             else:
                 count_Rent = 0
-        except:
+        except:  # noqa: E722
             count_Rent = 0
 
         print("loading file ....")
@@ -82,7 +82,7 @@ def pdfDownload(driver,permit=''): #0
     time.sleep(2)
     try:
         pdfPreload(new_filename=permit)
-    except:
+    except:  # noqa: E722
         print("The Property Listing PDF File might not Found")
     return driver
     
@@ -192,7 +192,7 @@ def scrapData(permit):#1
                 }
                 merged_data.append(merged_entry)
 
-    except:
+    except Exception as e:
         print("Error while merging data",e)
 
     try:
@@ -216,5 +216,5 @@ if __name__ == "__main__":
         print('pdfProcessing done')
         driver().close()
 
-    except Exception as e:
+    except:  # noqa: E722
         print("..........................................................................................")
